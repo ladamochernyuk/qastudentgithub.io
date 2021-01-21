@@ -892,18 +892,6 @@ nav{
 .show-sidebar{
     transform: translate(0);
 }
-.cart{
-    margin: 1rem 4em;
-    background: white;
-    grid-template-rows: repeat(auto-fit, 1fr);
-    grid-template-columns: 1fr;
-    row-gap: 1rem;
-    box-shadow: rgba(180, 179, 179, 0.589);
-    border: 1px #ccc double;
-    transition: var(--transition);
-    width: 70%;
-    margin: 0 auto;
-}
 /* details */
 
 .single{
