@@ -72,13 +72,13 @@ function renderShowcase(){
     productDetails.forEach(function(element) {
         element.addEventListener("click", function(e){
             let product = getProduct(e.target.closest('.product').dataset.id);
-            let contentAbout = document.querySelector('.description__content--about');
+            let contentAbout = document.querySelector('.description_content--about');
             contentAbout.innerHTML = `
             <h1>${product.name}</h1>
                 <h2>$${product.price}</h2>
                 <div>${product.description}</div>
             `;
-            document.querySelector('.product__img').innerHTML = `<img src="${product.image}" alt="">`;
+            document.querySelector('.product_img').innerHTML = `<img src="${product.image}" alt="">`;
             single.classList.add("show-single");
         });
     });
