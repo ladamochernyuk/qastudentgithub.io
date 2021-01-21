@@ -1,5 +1,5 @@
 // <comment
-"use strict";
+//"use strict";
 
 //const shoppingCart  = document.getElementById('shopping-cart'); 
 const aside = document.querySelector('.aside');
@@ -62,51 +62,49 @@ function renderShowcase(){
 
     productDetails.forEach(function(element){
         element.addEventListener('click', function(e){
+            let product = getProduct(e.target.closest('.product').dataset.id);
+            //let parent = e.target.closest('.product');
 
-            let parent = e.target.closest('.product');
+            //let id = parent.dataset.id;
 
-            let id = parent.dataset.id;
+            //let name = parent.querySelector('.product-name').innerText;
 
-            let name = parent.querySelector('.product-name').innerText;
-
-            let price = parent.querySelector('.product-price').innerText;
-
-            let about = `
-            <h1>${name}</h1>
-            <h2>${price}</h2>
-            <p>BBBBBBBBBBBB</p>`;
+            //let price = parent.querySelector('.product-price').innerText;
 
            
             let contentAbout = document.querySelector('.description_content--about');
-            contentAbout.innerHTML = about;
+            contentAbout.innerHTML = `
+            <h1>${name}</h1>
+            <h2>${price}</h2>
+            <p>BBBBBBBBBBBB</p>`;
             
 
-            let detail = single.querySelector('.detail');
-            detail.innerHTML = `<div class="product"  data-id="${id}">${detail.innerHTML}</div>`;
+           // let detail = single.querySelector('.detail');
+        //  detail.innerHTML = `<div class="product"  data-id="${id}">${detail.innerHTML}</div>`;
 
 
-            let image = parent.querySelector('.product-img').getAttribute('src');
+            //let image = parent.querySelector('.product-img').getAttribute('src');
             document.querySelector('.product_img').innerHTML = `<img src = "${image}" alt="">`;
             single.classList.add('show-single');
             
-            let addToCart = single.querySelector('.add-to-cart');
+           // let addToCart = single.querySelector('.add-to-cart');
 
-            addToCart.addEventListener('click', function(event) {
-            let product = getProduct(event.target.closest('.product').dataset.id);
+            //addToCart.addEventListener('click', function(event) {
+            //let product = getProduct(event.target.closest('.product').dataset.id);
         
-            let exist = cart.some(elem => elem.id===product.id)
-            if (exist){
-            cart.forEach(elem => {
-                if(elem.id === product.id){
-                    elem.amount += 1;
-                }
-            })
-            }else{
-            let cartItem = {...product, amount: 1};
-            cart = [...cart, cartItem]
-            }
-            console.log(cart);
-    })
+            //let exist = cart.some(elem => elem.id===product.id)
+            //if (exist){
+            //cart.forEach(elem => {
+               // if(elem.id === product.id){
+                  //  elem.amount += 1;
+               // }
+           // })
+           // }else{
+            //let cartItem = {...product, amount: 1};
+           // cart = [...cart, cartItem]
+           // }
+           // console.log(cart);
+
     });
     });
 
@@ -132,6 +130,7 @@ function makeCaraousel(category){
     result += result;
     document.querySelector('.caraousel-track').innerHTML = result;
 }
+
 const getProduct = (id) => products.find((product) =>  product.id === +(id));
 
 
@@ -191,16 +190,16 @@ function renderCart(){
             event.target.closest(".cart-item").remove();  
         }
         else if (event.target.classList.contains("fa-caret-right")){
-            let tmpItem = findItem(cart, event.target);
-            tmpItem.amount = tmpItem.amount + 1;
-            event.target.previousElementSibling.innerText = tmpItem.amount;
-            console.log(cart);
+            let tempItem = findItem(cart, event.target);
+            tempItem.amount = tempItem.amount + 1;
+            event.target.previousElementSibling.innerText = tempItem.amount;
+          //  console.log(cart);
         }
         else if (event.target.classList.contains("fa-caret-left")){
-            let tmpItem = findItem(cart, event.target);
-            if(tmpItem !== undefined && tmpItem.amount > 1) {
-            tmpItem.amount = tmpItem.amount - 1;
-            event.target.nextElementSibling.innerText = tmpItem.amount;
+            let tempItem = findItem(cart, event.target);
+            if(tempItem !== undefined && tempItem.amount > 1) {
+            tempItem.amount = tempItem.amount - 1;
+            event.target.nextElementSibling.innerText = tempItem.amount;
         }
           else{
               cart = filterItem(cart, event.target);
