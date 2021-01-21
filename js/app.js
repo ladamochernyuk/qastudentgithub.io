@@ -1,7 +1,7 @@
 // <comment
 "use strict";
 
-const shoppingCart  = document.getElementById('shopping-cart'); 
+//const shoppingCart  = document.getElementById('shopping-cart'); 
 const aside = document.querySelector('.aside');
 const closeBtn = document.querySelector('.close-btn');
 const sidebarToggle =document.querySelector('.sidebar-toggle');
@@ -42,12 +42,6 @@ const createProduct = (data) =>
         </div>
     `;
 
-shoppingCart.addEventListener('click', toggleCart);
-
-closeBtn.addEventListener('click', function(){
-aside.classList.remove('show-sidebar');
-});
-//product
 
 function makeShowcase(products){
     let result = ''; 
