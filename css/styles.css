@@ -656,7 +656,7 @@ nav{
 }
 .caraousel .caraousel-track{
     display: flex;
-    width: calc(250px*6);
+    width: calc(250px*12);
     animation: scroll 40s linear infinite;
 }
 .caraousel .caraousel-item{
@@ -671,7 +671,7 @@ nav{
         transform: translateX(0);
     }
     100%{
-        transform: translateX(calc(-250px*4));
+        transform: translateX(calc(-250px*6));
     }
 }
 .caraousel::before, .caraousel::after{
