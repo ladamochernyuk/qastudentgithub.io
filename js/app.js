@@ -13,8 +13,7 @@ const cartItems = document.querySelector('.cart-items');
 const toggleCart = () => {
     single.classList.contains("show-single") && single.classList.remove("show-single");
     aside.classList.toggle("show");
-    aside.classList.contains("show") && populateCart(cart);
-        cartItems.innerHTML = '';  
+    aside.classList.contains("show") && populateCart(cart);       
 }
 
 function closeCart(){
