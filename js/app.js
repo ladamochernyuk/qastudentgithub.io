@@ -161,7 +161,7 @@ const filterItem = (cart, curentItem) => cart.filter(item => item.id !== +(curen
 const findItem = (cart, curentItem) => cart.find(item => item.id === +(curentItem.dataset.id));
 
 function renderCart() {
-    clearCart.addEventListener("click", () => clear());
+  //  clearCart.addEventListener("click", () => clear());
     cartItems.addEventListener("click", event => {
         // event.preventDefault();
         if (event.target.classList.contains("fa-trash-alt")){
